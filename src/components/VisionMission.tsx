@@ -17,9 +17,9 @@ const VisionMission = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
           {stats.map((stat, index) => (
-            <div key={index} className="text-center p-8 bg-card rounded-2xl shadow-lg">
+            <div key={index} className="text-center p-10 bg-white rounded-2xl shadow-md border border-border/50">
               <div className="text-5xl font-bold text-primary mb-3">{stat.value}</div>
-              <div className="text-muted-foreground">{stat.label}</div>
+              <div className="text-muted-foreground text-base">{stat.label}</div>
             </div>
           ))}
         </div>

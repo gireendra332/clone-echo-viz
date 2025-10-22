@@ -37,14 +37,14 @@ const Projects = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <Card key={index} className="p-8 hover:shadow-xl transition-shadow duration-300">
+            <Card key={index} className="p-8 hover:shadow-lg transition-all duration-300 bg-white border border-border/50">
               <h3 className="text-2xl font-bold text-primary mb-4">{project.title}</h3>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
+              <p className="text-muted-foreground mb-6 leading-relaxed text-base">
                 {project.description}
               </p>
               <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag, tagIndex) => (
-                  <Badge key={tagIndex} variant="secondary" className="text-xs">
+                  <Badge key={tagIndex} variant="secondary" className="text-xs px-3 py-1">
                     {tag}
                   </Badge>
                 ))}

@@ -30,11 +30,11 @@ const HowItWorks = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
           {steps.map((step, index) => (
             <div key={index} className="text-center">
-              <div className="w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+              <div className="w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6 shadow-md">
                 {step.number}
               </div>
               <h3 className="text-xl font-bold text-primary mb-4">{step.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed text-base">
                 {step.description}
               </p>
             </div>
