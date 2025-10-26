@@ -2,28 +2,33 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 
 const Projects = () => {
-  const projects = [
-    {
-      title: "Voice Dubbing AI",
-      description: "Dub creators' voices into regional languages (Hindi → Telugu, Tamil, Kannada, Gujarati, etc.) while retaining tone and expression. Perfect voice cloning that maintains emotional authenticity across languages.",
-      tags: ["Voice Cloning", "Regional Languages", "Tone Preservation"]
-    },
-    {
-      title: "AutoReach",
-      description: "AI platform that helps creators manage multilingual uploads automatically. Streamline your content distribution across language barriers with intelligent automation and scheduling.",
-      tags: ["Automation", "Multi-lingual", "Content Management"]
-    },
-    {
-      title: "ContentFlow",
-      description: "Manage content translation, lip-sync, and dubbing through one unified dashboard. End-to-end solution for creators who want to reach global audiences without technical complexity.",
-      tags: ["Lip-sync", "Translation", "Dashboard"]
-    },
-    {
-      title: "EchoBoost",
-      description: "AI system that helps influencers expand their voice to regional markets. Analyze audience demographics and automatically create localized content that resonates with each region.",
-      tags: ["Analytics", "Regional Growth", "AI Insights"]
-    }
-  ];
+ const projects = [
+  {
+    title: "Voice Dubbing Service",
+    description:
+      "We provide high-quality AI dubbing for creators who want to expand their reach across India. Our team takes your original videos (e.g., Hindi) and dubs them into regional languages like Telugu, Tamil, Kannada, and Malayalam, ensuring your unique voice tone is perfectly preserved.",
+    tags: ["Voice Dubbing", "Tone Preservation"]
+  },
+  {
+    title: "Regional Channel Management",
+    description:
+      "We don’t just dub, we also create and manage dedicated regional channels or pages for your brand. From uploading dubbed videos to engaging with local audiences, we help you grow region-specific fan bases with authentic cultural alignment.",
+    tags: ["Channel Management", "Audience Growth", "Localization"]
+  },
+  {
+    title: "Content Distribution & Scheduling",
+    description:
+      "Our team handles the end-to-end process of content distribution across multiple regional platforms. We schedule, optimize, and publish your dubbed content to ensure consistent visibility and engagement in each target region.",
+    tags: ["Content Strategy", "Automation", "Scheduling"]
+  },
+  {
+    title: "Regional Audience Insights",
+    description:
+      "We analyze performance across different language markets, providing insights into audience behavior, engagement patterns, and growth opportunities. These insights help creators refine their regional content strategy effectively.",
+    tags: ["Analytics", "Regional Insights", "Growth Strategy"]
+  }
+];
+
 
   return (
     <section id="projects" className="py-24 px-4 bg-muted/30">

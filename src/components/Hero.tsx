@@ -20,7 +20,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed">
-            AI tools that let creators speak every language — while keeping their original voice and style.
+            AI tools that let creators speak every language while keeping their original voice and style.
           </p>
           
           <Button 

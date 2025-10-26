@@ -11,7 +11,7 @@ const VisionMission = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">Vision & Mission</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            I'm exploring AI that empowers creators to break language barriers — from real-time dubbing to voice cloning and video localization. My goal is to make global content accessible, natural, and emotionally accurate.
+            I'm exploring AI that empowers creators to break language barriers, from real-time dubbing to voice cloning and video localization. My goal is to make global content accessible, natural, and emotionally accurate.
           </p>
         </div>
         

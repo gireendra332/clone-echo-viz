@@ -1,21 +1,26 @@
 const HowItWorks = () => {
-  const steps = [
-    {
-      number: "1",
-      title: "Upload Your Content",
-      description: "Upload your video or audio content to our AI platform. Supports multiple formats and high-quality files for best results."
-    },
-    {
-      number: "2",
-      title: "AI Separates Voice & Background",
-      description: "Our advanced AI technology intelligently separates voice tracks from background music and ambient sounds with precision."
-    },
-    {
-      number: "3",
-      title: "Re-voice in Chosen Language",
-      description: "Select your target language and let AI clone your voice perfectly, maintaining tone, emotion, and speaking style."
-    }
-  ];
+const steps = [
+  {
+    number: "1",
+    title: "Share Your Video Content",
+    description:
+      "After partnering with the creator, we collect their existing videos or past content. for example, Hindi-language videos, either through direct file sharing or links from platforms like YouTube or Instagram."
+  },
+  {
+    number: "2",
+    title: "AI-Powered Dubbing & Localization",
+    description:
+      "Our team uses advanced AI voice cloning and professional editing to dub your content into regional languages like Telugu, Tamil, Kannada, Marathi, etc. preserving your original tone and emotion."
+  },
+  {
+    number: "3",
+    title: "Distribute & Grow Regional Reach",
+    description:
+      "We manage your regional channels, upload and optimize dubbed videos, and help you reach new local audiences with consistent posting and engagement insights."
+  }
+];
+
+
 
   return (
     <section id="how-it-works" className="py-24 px-4 bg-background">

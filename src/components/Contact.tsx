@@ -9,7 +9,9 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    message: ""
+    message: "",
+    phone: "",
+    link: ""
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -18,7 +20,7 @@ const Contact = () => {
       title: "Message sent!",
       description: "Thank you for reaching out. I'll get back to you soon.",
     });
-    setFormData({ name: "", email: "", message: "" });
+    setFormData({ name: "", email: "", message: "", phone: "", link: "" });
   };
 
   return (
@@ -31,10 +33,11 @@ const Contact = () => {
           </p>
         </div>
         
+        <p className="text-sm text-muted-foreground mb-4">* Required fields</p>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <Input
-              placeholder="Your Name"
+              placeholder="Your Name *"
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               required
@@ -45,9 +48,28 @@ const Contact = () => {
           <div>
             <Input
               type="email"
-              placeholder="Email Address"
+              placeholder="Email Address *"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              required
+              className="h-12"
+            />
+          </div>
+          <div>
+            <Input
+              type="number"
+              placeholder="Contact Number (Optional)"
+              value={formData.phone}
+              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+              className="h-12"
+            />
+          </div>
+          <div>
+            <Input
+              type="text"
+              placeholder="Channel / Page Name (Share Link if possible) *"
+              value={formData.link}
+              onChange={(e) => setFormData({ ...formData, link: e.target.value })}
               required
               className="h-12"
             />
@@ -55,10 +77,10 @@ const Contact = () => {
           
           <div>
             <Textarea
-              placeholder="Message"
+              placeholder="Message (Optional)"
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              required
+              
               className="min-h-32"
             />
           </div>
