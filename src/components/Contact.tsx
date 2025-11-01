@@ -4,6 +4,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
 
+const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbykzIcOPEc-3Wg0R-sntK6B9jAFw89zkkRvVbwrsjMe5FbwA4OnLXqpHG3fqBAaQsSP/exec";
+
 const Contact = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
@@ -14,13 +16,51 @@ const Contact = () => {
     link: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    });
-    setFormData({ name: "", email: "", message: "", phone: "", link: "" });
+
+    // basic client-side validation
+    if (!formData.name.trim() || !formData.email.trim() || !formData.link.trim()) {
+      toast({
+        title: "Missing fields",
+        description: "Please fill out required fields (*) before submitting.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    try {
+      // Convert the data to URL-encoded format
+      const formBody = new URLSearchParams();
+      Object.entries(formData).forEach(([key, value]) => {
+        formBody.append(key, value);
+      });
+
+      const resp = await fetch(WEBAPP_URL, {
+        method: "POST",
+        mode: "no-cors", // Change to no-cors mode
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: formBody.toString(),
+      });
+
+      // Google Apps Script might return text instead of JSON
+      // With no-cors mode, we won't get a proper response status
+      // So we'll assume success if we got here without an error
+      toast({
+        title: "Message sent!",
+        description: "Thank you for reaching out. I'll get back to you soon.",
+      });
+      setFormData({ name: "", email: "", message: "", phone: "", link: "" });
+    } catch (err: any) {
+      console.error("Form submission error:", err);
+      toast({
+        title: "Submission failed",
+        description: "Unable to submit form. Please try again later.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
@@ -52,7 +92,7 @@ const Contact = () => {
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               required
-              className="h-12"
+              className="h-12"  
             />
           </div>
           <div>
