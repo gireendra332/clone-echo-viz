@@ -40,8 +40,8 @@ const Testimonials = () => {
   role: "Content Creator",
   originalLang: "Original (Hindi)",
   dubbedLang: "Dubbed (Telugu)",
-  originalVideo: "public/videos/testimonial1making_original.mp4",
-  dubbedVideo: "public/videos/testimonial1making_Telugu_translated.mp4"
+  originalVideo: "/videos/testimonial1making_original.mp4",
+  dubbedVideo: "/videos/testimonial1making_Telugu_translated.mp4"
   
 },
     // {
